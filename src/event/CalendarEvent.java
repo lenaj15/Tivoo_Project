@@ -7,11 +7,11 @@ import org.joda.time.format.DateTimeFormatter;
 
 public class CalendarEvent {
 	
-	public String myTitle, mySummaries;
-	public DateTime myStartTime, myEndTime;
-	public boolean isOutput;
+	protected String myTitle, mySummaries;
+	protected DateTime myStartTime, myEndTime;
+	protected boolean isOutput;
 	
-	public CalendarEvent(String title, DateTime start, DateTime end, String summaries){	
+	public CalendarEvent(String title, DateTime start, DateTime end, String summaries) {	
 		myTitle = title;
 		myStartTime = start;
 		myEndTime = end;
@@ -19,10 +19,27 @@ public class CalendarEvent {
 		isOutput = true;
 	}
 
+	public void setisOutput(boolean value) {
+    	isOutput = value;
+    }
+	
+	public void toggleIntersect() {
+    	isOutput &= true;
+    }
+	
 	public String getMyTitle() {
     	return myTitle;
     }
 
+	public boolean getisOutput() {
+    	return isOutput;
+    }
+	public DateTime getmyStartTime() {
+    	return myStartTime;
+    }
+	public DateTime getmyEndTime() {
+    	return myEndTime;
+    }
 
 	public String getMySummaries() {
     	return mySummaries;
